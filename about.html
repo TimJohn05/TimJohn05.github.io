@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About | Timothy John Lopez, Graphic Designer</title>
+  <meta name="description" content="Background, experience and design approach of Timothy John Lopez, graphic designer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html">Timothy John Lopez<span class="logo-dot">.</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container page-head">
+      <span class="section-marker" aria-hidden="true"></span>
+      <h1>About</h1>
+    </div>
+
+    <!-- Bio: circular portrait placeholder beside a short introduction. -->
+    <section class="section--tight" aria-labelledby="bio-title">
+      <div class="container bio">
+        <img class="portrait" src="https://via.placeholder.com/640x640/ddddd8/4a4a4a?text=Portrait" alt="Circular placeholder profile photo" data-placeholder>
+        <div>
+          <h2 id="bio-title">A student who likes to build things</h2>
+          <p class="lede">I'm Timothy John Lopez, a computer science student at City College of Calamba. I use Linux for development and DevOps work, and I like problems that can be solved with a clear plan and a small set of tools.</p>
+          <p>I'm inspired by open source software and the people who maintain it. Contributing to a project, fixing a bug, or improving a setup that someone else will use is the part I enjoy most. I also like the discipline of automating a task once and having it run cleanly every time.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Two columns with deliberately different treatments: a record and a statement. -->
+    <section class="section--tight" aria-label="Background and approach">
+      <div class="container two-col">
+        <div class="panel">
+          <h2>Education and experience</h2>
+          <ul class="timeline">
+            <li>
+              <span>[Year] to [Year]</span>
+              <strong>Degree in Graphic Design</strong>
+              <small>[University or college]</small>
+            </li>
+            <li>
+              <span>[Year] to present</span>
+              <strong>Graphic Designer</strong>
+              <small>[Studio or company]</small>
+            </li>
+            <li>
+              <span>[Year]</span>
+              <strong>Design internship</strong>
+              <small>[Studio or company]</small>
+            </li>
+          </ul>
+          <p class="note">Replace the bracketed entries with your real history.</p>
+        </div>
+        <div class="panel panel--tint">
+          <h2>Design philosophy and skills</h2>
+          <p>Good design should make the next step obvious. I start with the message, strip back what does not carry it, then build a system that survives being resized, reprinted and reused.</p>
+          <p>My day to day work covers typography, layout, brand marks and production files for print and social. I would rather solve a problem with one strong decision than with five clever ones.</p>
+          <ul class="tag-list">
+            <li>Typography</li>
+            <li>Layout systems</li>
+            <li>Brand marks</li>
+            <li>Print production</li>
+            <li>Social assets</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>&copy; <span id="year">2026</span> Timothy John Lopez</span>
+      <div class="footer-links">
+        <a href="contact.html">Get in touch</a>
+        <a href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

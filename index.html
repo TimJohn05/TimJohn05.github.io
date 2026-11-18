@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | Timothy John Lopez, Graphic Designer</title>
+  <meta name="description" content="Selected graphic design work: posters, identities and social graphics.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html">Timothy John Lopez<span class="logo-dot">.</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero: image, readability scrim and tagline. -->
+  <section class="hero" aria-labelledby="hero-title">
+    <img class="hero__img" src="https://via.placeholder.com/1600x900/2b2b2b/e8e8e8?text=Hero+Image" alt="Placeholder hero image" data-placeholder>
+    <span class="hero__scrim" aria-hidden="true"></span>
+    <div class="container hero__content">
+      <h1 id="hero-title">Hi, I'm Timothy John Lopez, a graphic designer.</h1>
+      <p>I work across print and screen on posters, identities and social graphics. The work starts with a clear idea and ends with a file that is ready to use.</p>
+      <a class="btn" href="portfolio.html">See the work</a>
+    </div>
+  </section>
+
+  <!-- Featured work: three samples, each opening the same project template. -->
+  <section class="section" aria-labelledby="featured-title">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-marker" aria-hidden="true"></span>
+        <h2 id="featured-title">Featured work</h2>
+        <p class="lede">A small selection from the gallery. Each project page shows the brief, the tools and the change between versions.</p>
+      </div>
+      <div class="work-grid">
+        <a class="work-card" href="project.html">
+          <div class="media">
+            <img src="https://via.placeholder.com/800x600/e9e9e6/4a4a4a?text=Festival+Series" alt="Placeholder image for Festival Series posters" data-placeholder>
+          </div>
+          <div class="work-card__meta">
+            <span class="work-card__title">Festival Series</span>
+            <span class="work-card__cat">Poster</span>
+          </div>
+        </a>
+        <a class="work-card" href="project.html">
+          <div class="media">
+            <img src="https://via.placeholder.com/800x600/e9e9e6/4a4a4a?text=Northline+Identity" alt="Placeholder image for Northline identity" data-placeholder>
+          </div>
+          <div class="work-card__meta">
+            <span class="work-card__title">Northline Identity</span>
+            <span class="work-card__cat">Logo</span>
+          </div>
+        </a>
+        <a class="work-card" href="project.html">
+          <div class="media">
+            <img src="https://via.placeholder.com/800x600/e9e9e6/4a4a4a?text=Weekly+Grid" alt="Placeholder image for Weekly Grid social set" data-placeholder>
+          </div>
+          <div class="work-card__meta">
+            <span class="work-card__title">Weekly Grid</span>
+            <span class="work-card__cat">Social</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>&copy; <span id="year">2026</span> Timothy John Lopez</span>
+      <div class="footer-links">
+        <a href="contact.html">Get in touch</a>
+        <a href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skills | Timothy John Lopez, Graphic Designer</title>
+  <meta name="description" content="Technical and people skills of Timothy John Lopez, graphic designer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html">Timothy John Lopez<span class="logo-dot">.</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="skills.html" aria-current="page">Skills</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container page-head">
+      <span class="section-marker" aria-hidden="true"></span>
+      <h1>Skills</h1>
+      <p class="lede">Level labels are self rated and shown for shape only. Adjust them to match your own work.</p>
+    </div>
+
+    <!-- Two columns with different internal layouts: bars on the left, notes on the right. -->
+    <section class="section--tight" aria-label="Skill summary">
+      <div class="container two-col">
+        <div class="panel">
+          <h2>Technical skills</h2>
+          <div class="skill-row">
+            <div class="skill-row__head">
+              <span>Adobe Illustrator</span>
+              <span class="skill-row__level">Advanced</span>
+            </div>
+            <div class="bar" role="img" aria-label="Adobe Illustrator, advanced"><span style="width: 90%"></span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row__head">
+              <span>Adobe Photoshop</span>
+              <span class="skill-row__level">Advanced</span>
+            </div>
+            <div class="bar" role="img" aria-label="Adobe Photoshop, advanced"><span style="width: 85%"></span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row__head">
+              <span>Figma</span>
+              <span class="skill-row__level">Proficient</span>
+            </div>
+            <div class="bar" role="img" aria-label="Figma, proficient"><span style="width: 78%"></span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row__head">
+              <span>Adobe InDesign</span>
+              <span class="skill-row__level">Proficient</span>
+            </div>
+            <div class="bar" role="img" aria-label="Adobe InDesign, proficient"><span style="width: 72%"></span></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-row__head">
+              <span>Canva</span>
+              <span class="skill-row__level">Working</span>
+            </div>
+            <div class="bar" role="img" aria-label="Canva, working"><span style="width: 60%"></span></div>
+          </div>
+        </div>
+
+        <div class="panel panel--tint">
+          <h2>Soft skills</h2>
+          <ul class="soft-list">
+            <li>
+              <strong>Creativity</strong>
+              <span>Finding a second route when the obvious one does not fit the brief.</span>
+            </li>
+            <li>
+              <strong>Communication</strong>
+              <span>Asking the question early and explaining decisions in plain language.</span>
+            </li>
+            <li>
+              <strong>Attention to detail</strong>
+              <span>Checking files, spacing and exports before they leave the studio.</span>
+            </li>
+            <li>
+              <strong>Time management</strong>
+              <span>Breaking a project into stages and keeping each one on schedule.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container resume">
+        <button class="btn" type="button" id="download-resume">Download resume</button>
+        <p class="note" id="resume-status" role="status">Downloads a labelled text placeholder. Replace it with your real CV.</p>
+      </div>
+    </section>
+
+    <!-- Wide placeholder panel. Real testimonials go here once permission is granted. -->
+    <section class="testimonial" aria-labelledby="testimonial-title">
+      <div class="container">
+        <span class="section-marker" aria-hidden="true"></span>
+        <h2 id="testimonial-title">Testimonials</h2>
+        <div class="testimonial__placeholder">
+          [Add a real client quote here, with their name, role and company, and only with their permission.]
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>&copy; <span id="year">2026</span> Timothy John Lopez</span>
+      <div class="footer-links">
+        <a href="contact.html">Get in touch</a>
+        <a href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

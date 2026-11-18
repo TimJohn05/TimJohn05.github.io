@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio | Timothy John Lopez, Graphic Designer</title>
+  <meta name="description" content="Graphic design gallery: posters, logos and social media work.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="logo" href="index.html">Timothy John Lopez<span class="logo-dot">.</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container page-head">
+      <span class="section-marker" aria-hidden="true"></span>
+      <h1>Portfolio</h1>
+      <p class="lede">Six pieces across three areas. Choose a category to narrow the grid, then open any piece for the project page.</p>
+    </div>
+
+    <!-- Filter tabs. Buttons keep keyboard and screen reader support. -->
+    <section class="section--tight" aria-label="Work gallery">
+      <div class="container">
+        <div class="filters" role="group" aria-label="Filter work by category">
+          <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All work</button>
+          <button class="filter-btn" type="button" data-filter="posters" aria-pressed="false">Posters</button>
+          <button class="filter-btn" type="button" data-filter="logos" aria-pressed="false">Logos</button>
+          <button class="filter-btn" type="button" data-filter="social" aria-pressed="false">Social Media</button>
+        </div>
+
+        <div class="gallery" id="gallery">
+          <figure class="gallery__item" data-category="posters">
+            <a href="project.html">
+              <div class="media">
+                <img src="https://via.placeholder.com/700x520/e9e9e6/4a4a4a?text=Festival+Series" alt="Placeholder image for Festival Series poster" loading="lazy" data-placeholder>
+              </div>
+              <figcaption class="gallery__caption">
+                <strong>Festival Series</strong>
+                <span>Posters</span>
+              </figcaption>
+            </a>
+          </figure>
+
+          <figure class="gallery__item" data-category="logos">
+            <a href="project.html">
+              <div class="media">
+                <img src="https://via.placeholder.com/700x520/e9e9e6/4a4a4a?text=Northline+Identity" alt="Placeholder image for Northline identity" loading="lazy" data-placeholder>
+              </div>
+              <figcaption class="gallery__caption">
+                <strong>Northline Identity</strong>
+                <span>Logos</span>
+              </figcaption>
+            </a>
+          </figure>
+
+          <figure class="gallery__item" data-category="social">
+            <a href="project.html">
+              <div class="media">
+                <img src="https://via.placeholder.com/700x520/e9e9e6/4a4a4a?text=Weekly+Grid" alt="Placeholder image for Weekly Grid social set" loading="lazy" data-placeholder>
+              </div>
+              <figcaption class="gallery__caption">
+                <strong>Weekly Grid</strong>
+                <span>Social Media</span>
+              </figcaption>
+            </a>
+          </figure>
+
+          <figure class="gallery__item" data-category="posters">
+            <a href="project.html">
+              <div class="media">
+                <img src="https://via.placeholder.com/700x520/e9e9e6/4a4a4a?text=Type+Study" alt="Placeholder image for Type Study poster" loading="lazy" data-placeholder>
+              </div>
+              <figcaption class="gallery__caption">
+                <strong>Type Study</strong>
+                <span>Posters</span>
+              </figcaption>
+            </a>
+          </figure>
+
+          <figure class="gallery__item" data-category="logos">
+            <a href="project.html">
+              <div class="media">
+                <img src="https://via.placeholder.com/700x520/e9e9e6/4a4a4a?text=Cedar+and+Co" alt="Placeholder image for Cedar and Co logo" loading="lazy" data-placeholder>
+              </div>
+              <figcaption class="gallery__caption">
+                <strong>Cedar and Co</strong>
+                <span>Logos</span>
+              </figcaption>
+            </a>
+          </figure>
+
+          <figure class="gallery__item" data-category="social">
+            <a href="project.html">
+              <div class="media">
+                <img src="https://via.placeholder.com/700x520/e9e9e6/4a4a4a?text=Campaign+Set" alt="Placeholder image for Campaign Set social graphics" loading="lazy" data-placeholder>
+              </div>
+              <figcaption class="gallery__caption">
+                <strong>Campaign Set</strong>
+                <span>Social Media</span>
+              </figcaption>
+            </a>
+          </figure>
+        </div>
+
+        <p class="grid-empty" hidden>No work in this category yet. Try another filter.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>&copy; <span id="year">2026</span> Timothy John Lopez</span>
+      <div class="footer-links">
+        <a href="contact.html">Get in touch</a>
+        <a href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
