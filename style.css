@@ -485,6 +485,16 @@ h2 {
   font-size: 0.85rem;
 }
 
+.timeline a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.timeline a:hover {
+  color: var(--accent-deep);
+}
+
 .tag-list {
   display: flex;
   flex-wrap: wrap;
