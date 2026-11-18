@@ -4,12 +4,12 @@
   Direction: minimalist editorial portfolio, from the project brief.
   Palette: white and warm greys plus one brick accent (#c84624), sole accent by brief (R-01, R-29).
   Type: Inter with Helvetica fallback, chosen for neutral, legible screen forms (R-06).
-  Accent use: section marker, current nav state, primary buttons, focus ring. Nowhere else (R-29).
+  Accent use: section marker, current nav state, primary buttons, focus ring and inline links (R-29).
   Radius: 2px on controls, 50% for the portrait and social icons, pill only on the project pager (R-11).
   Motif: short accent rule above section headings, an editorial print marker (R-20).
   Dials: ENERGY 2, RHYTHM 2, MOTION 1. Hover and focus only, no decorative loops (R-19).
-  Theme: light only, specified by the brief so artwork sits on white (R-21).
-  Contrast: ink #161616, muted #565656 (7.4:1 on white), accent #c84624 (4.8:1 on white) (R-25).
+  Theme: light default with a dark option saved in local storage, both tuned for the same accent (R-21).
+  Contrast: light uses ink #161616, muted #565656 and accent #c84624. Dark uses ink #f2f2ef, muted #b9b9b4 and accent #ef7a58 (R-25).
   Hero scrim: solid translucent black, a readability layer rather than a decorative gradient (R-01).
   Work grids are uniform on purpose: repeated work samples keep attention on the artwork (R-14).
 */
@@ -22,6 +22,10 @@
   --line: #d9d9d4;
   --accent: #c84624;
   --accent-deep: #a9381c;
+  --link: #a9381c;
+  --on-accent: #ffffff;
+  --on-ink: #ffffff;
+  color-scheme: light;
   --max: 1160px;
   --s1: 0.5rem;
   --s2: 1rem;
@@ -30,6 +34,20 @@
   --s5: 4rem;
   --s6: 6rem;
   --radius: 2px;
+}
+
+html[data-theme="dark"] {
+  --paper: #121212;
+  --paper-2: #1c1c1a;
+  --ink: #f2f2ef;
+  --muted: #b9b9b4;
+  --line: #383837;
+  --accent: #ef7a58;
+  --accent-deep: #ff9d80;
+  --link: #ff9d80;
+  --on-accent: #1a100d;
+  --on-ink: #121212;
+  color-scheme: dark;
 }
 
 *,
@@ -77,6 +95,27 @@ textarea {
   outline-offset: 3px;
 }
 
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--s2);
+  z-index: 100;
+  padding: 0.6rem 0.9rem;
+  background: var(--ink);
+  color: var(--on-ink);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: var(--s2);
+}
+
+main {
+  scroll-margin-top: 88px;
+}
+
 .container {
   width: min(100% - 2.5rem, var(--max));
   margin-inline: auto;
@@ -94,12 +133,12 @@ textarea {
 .nav-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: var(--s2);
   min-height: 72px;
 }
 
 .logo {
+  margin-right: auto;
   font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -108,6 +147,11 @@ textarea {
 
 .logo-dot {
   color: var(--accent);
+}
+
+.primary-nav {
+  order: 2;
+  margin-right: var(--s2);
 }
 
 .primary-nav ul {
@@ -134,7 +178,52 @@ textarea {
   text-decoration-thickness: 2px;
 }
 
+.theme-toggle {
+  order: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  border-color: var(--ink);
+  background: var(--paper-2);
+}
+
+.theme-toggle svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.theme-toggle__sun {
+  display: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+html[data-theme="dark"] .theme-toggle__moon {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-toggle__sun {
+  display: block;
+}
+
 .nav-toggle {
+  order: 4;
   display: none;
   flex-direction: column;
   align-items: center;
@@ -234,7 +323,7 @@ h2 {
   border: 1px solid var(--accent);
   border-radius: var(--radius);
   background: var(--accent);
-  color: #ffffff;
+  color: var(--on-accent);
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
@@ -257,7 +346,7 @@ h2 {
   color: var(--ink);
 }
 
-/* Media wrappers carry the loading state before a placeholder image resolves. */
+/* Media wrappers hold the aspect ratio while an image loads. */
 .media {
   overflow: hidden;
   background: var(--paper-2);
@@ -378,7 +467,7 @@ h2 {
 .filter-btn[aria-pressed="true"] {
   border-color: var(--ink);
   background: var(--ink);
-  color: #ffffff;
+  color: var(--on-ink);
 }
 
 .gallery {
@@ -458,6 +547,35 @@ h2 {
   font-size: 1.35rem;
 }
 
+.panel h3 {
+  margin: var(--s3) 0 var(--s2);
+  font-size: 1rem;
+}
+
+.focus__media {
+  aspect-ratio: 16 / 9;
+  margin-bottom: var(--s3);
+}
+
+.focus h3 {
+  margin-top: 0;
+  font-size: 1.15rem;
+}
+
+.focus p {
+  color: var(--muted);
+}
+
+.focus a {
+  display: inline-block;
+  margin-top: var(--s3);
+  color: var(--link);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
 .timeline {
   margin: 0;
   padding: 0;
@@ -485,14 +603,60 @@ h2 {
   font-size: 0.85rem;
 }
 
-.timeline a {
-  color: var(--muted);
+.text-link {
+  padding: 0.05rem 0.1rem;
+  border-radius: var(--radius);
+  color: var(--link);
+  font-weight: 600;
   text-decoration: underline;
+  text-decoration-thickness: 2px;
   text-underline-offset: 3px;
 }
 
-.timeline a:hover {
+.text-link:hover,
+.text-link:focus-visible {
+  background: var(--paper-2);
   color: var(--accent-deep);
+}
+
+.timeline a {
+  color: var(--link);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.timeline a:hover,
+.timeline a:focus-visible {
+  background: var(--paper-2);
+  color: var(--accent-deep);
+}
+
+.credential__kind {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.credential__name {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 1.05rem;
+}
+
+.credential__meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.credential__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-top: 0.6rem;
 }
 
 .tag-list {
@@ -587,12 +751,60 @@ h2 {
 
 .pager a:hover {
   background: var(--paper-2);
-  color: var(--accent-deep);
+  color: var(--link);
 }
 
 .pager__divider {
   width: 1px;
   background: var(--line);
+}
+
+.table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+}
+
+.table-scroll table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.table-scroll caption {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  text-align: left;
+}
+
+.table-scroll th,
+.table-scroll td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table-scroll thead th {
+  background: var(--paper-2);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.table-scroll tbody th {
+  font-weight: 600;
+}
+
+.table-scroll td {
+  font-variant-numeric: tabular-nums;
+}
+
+.table-scroll tfoot th,
+.table-scroll tfoot td {
+  border-bottom: 0;
+  background: var(--paper-2);
+  font-weight: 700;
 }
 
 /* Skills page. */
@@ -656,29 +868,6 @@ h2 {
   font-size: 0.9rem;
 }
 
-.resume {
-  margin-top: var(--s4);
-  text-align: center;
-}
-
-.testimonial {
-  margin-top: var(--s5);
-  padding: var(--s4);
-  background: var(--paper-2);
-}
-
-.testimonial h2 {
-  margin-bottom: var(--s2);
-  font-size: 1.35rem;
-}
-
-.testimonial__placeholder {
-  padding: var(--s3);
-  border: 1px dashed var(--line);
-  background: var(--paper);
-  color: var(--muted);
-}
-
 /* Contact page. */
 .contact-layout {
   display: grid;
@@ -705,8 +894,8 @@ h2 {
 }
 
 .socials a:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--link);
+  color: var(--link);
 }
 
 .socials svg {
@@ -738,7 +927,7 @@ h2 {
   padding: 0.7rem 0.8rem;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: #ffffff;
+  background: var(--paper);
   color: var(--ink);
 }
 
@@ -780,7 +969,7 @@ h2 {
 }
 
 .footer-inner a:hover {
-  color: var(--accent);
+  color: var(--link);
 }
 
 @media (max-width: 980px) {
@@ -872,6 +1061,25 @@ h2 {
 
   .pager a {
     padding-inline: 0.9rem;
+  }
+
+  .theme-toggle {
+    width: 44px;
+    padding: 0;
+  }
+
+  .theme-toggle__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .table-scroll th,
+  .table-scroll td {
+    padding-inline: 0.7rem;
   }
 }
 

@@ -4,20 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Home | Timothy John Lopez, Computer Science Student</title>
-  <meta name="description" content="Projects and notes from Timothy John Lopez, a computer science student working with Linux, DevOps and open source.">
+  <meta name="description" content="Timothy John Lopez builds Android apps with Flutter and works on Linux. See CitiSense, TechByte and shell tooling.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>
+    try {
+      if (localStorage.getItem("portfolio-theme") === "dark") {
+        document.documentElement.dataset.theme = "dark";
+      }
+    } catch (error) {}
+  </script>
   <script src="script.js" defer></script>
 </head>
 <body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="container nav-inner">
       <a class="logo" href="index.html">Timothy John Lopez<span class="logo-dot">.</span></a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
-        <span></span><span></span>
-      </button>
       <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
         <ul>
           <li><a href="index.html" aria-current="page">Home</a></li>
@@ -27,59 +32,99 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark theme" title="Switch to dark theme">
+        <svg class="theme-toggle__moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.7 13.2A8.5 8.5 0 0 1 10.8 3.3a8.5 8.5 0 1 0 9.9 9.9z"/></svg>
+        <svg class="theme-toggle__sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <span class="theme-toggle__label">Dark</span>
+      </button>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <!-- Hero: image, readability scrim and tagline. -->
+  <!-- Hero: a real CitiSense device photo, with a scrim for text contrast. -->
+  <main id="main">
   <section class="hero" aria-labelledby="hero-title">
-    <img class="hero__img" src="https://via.placeholder.com/1600x900/2b2b2b/e8e8e8?text=Linux+and+DevOps" alt="Placeholder hero image" data-placeholder>
+    <img class="hero__img" src="assets/hero-citisense.jpg" alt="CitiSense running on two devices">
     <span class="hero__scrim" aria-hidden="true"></span>
     <div class="container hero__content">
-      <h1 id="hero-title">Hi, I'm Timothy John Lopez. I study computer science and build with Linux.</h1>
-      <p>I'm a CS student at City College of Calamba. I work on apps, DevOps tooling and open source contributions, mostly from a Linux machine.</p>
+      <h1 id="hero-title">Hi, I'm Timothy John Lopez. I build Android apps and work on Linux.</h1>
+      <p>I'm a CS student at City College of Calamba. I build Flutter apps like CitiSense and TechByte from a Linux machine. I avoid Windows 11, so I use Wine when a Windows application is needed.</p>
       <a class="btn" href="portfolio.html">See the projects</a>
     </div>
   </section>
 
-  <!-- Featured work: three samples, each opening the same project template. -->
+  <!-- Two equal tracks make both sides of the work visible before the gallery. -->
+  <section class="section" aria-labelledby="focus-title">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-marker" aria-hidden="true"></span>
+        <h2 id="focus-title">What I work on</h2>
+        <p class="lede">Mobile app development on one side, Linux tooling on the other.</p>
+      </div>
+      <div class="two-col">
+        <article class="panel focus">
+          <div class="media focus__media">
+            <img src="assets/techbyte-focus.jpg" alt="Four TechByte screens captured on a phone">
+          </div>
+          <h3>Mobile app development</h3>
+          <p>I build Android apps with Flutter and Dart. CitiSense covers reporting and maps. TechByte covers 120 products across 12 categories, with product detail, cart and checkout. Both run on a phone.</p>
+          <a href="project.html?project=techbyte">See the TechByte app</a>
+        </article>
+        <article class="panel panel--tint focus">
+          <div class="media focus__media">
+            <img src="assets/bash-main.jpg" alt="Source code of the emu8086.sh Bash launcher">
+          </div>
+          <h3>Linux and tooling</h3>
+          <p>I develop on Linux and write Bash utilities for the setup around my work. The EMU8086 launcher uses Wine to run a Windows application without using Windows 11, and it handles Xwayland tokens. A small Python helper handles drive access.</p>
+          <a href="project.html?project=bash">See the Linux tools</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured work: all three projects, each with its own detail view. -->
   <section class="section" aria-labelledby="featured-title">
     <div class="container">
       <div class="section-head">
         <span class="section-marker" aria-hidden="true"></span>
         <h2 id="featured-title">Featured projects</h2>
-        <p class="lede">Three things I have built or written up. The gallery has the full set.</p>
+        <p class="lede">A community app, an offline catalog and the shell scripts I use on Linux.</p>
       </div>
       <div class="work-grid">
-        <a class="work-card" href="project.html">
+        <a class="work-card" href="project.html?project=citisense">
           <div class="media">
-            <img src="https://via.placeholder.com/800x600/e9e9e6/4a4a4a?text=CitiSense" alt="Placeholder image for CitiSense" data-placeholder>
+            <img src="assets/citisense-route.jpg" alt="CitiSense route view on a phone">
           </div>
           <div class="work-card__meta">
             <span class="work-card__title">CitiSense</span>
-            <span class="work-card__cat">App</span>
+            <span class="work-card__cat">Flutter app</span>
           </div>
         </a>
-        <a class="work-card" href="project.html">
+        <a class="work-card" href="project.html?project=techbyte">
           <div class="media">
-            <img src="https://via.placeholder.com/800x600/e9e9e6/4a4a4a?text=Library+API" alt="Placeholder image for the Library Management System" data-placeholder>
+            <img src="assets/techbyte-catalog.jpg" alt="TechByte home and product screens on a phone">
           </div>
           <div class="work-card__meta">
-            <span class="work-card__title">Library Management System</span>
-            <span class="work-card__cat">Web</span>
+            <span class="work-card__title">TechByte</span>
+            <span class="work-card__cat">Flutter app</span>
           </div>
         </a>
-        <a class="work-card" href="project.html">
+        <a class="work-card" href="project.html?project=bash">
           <div class="media">
-            <img src="https://via.placeholder.com/800x600/e9e9e6/4a4a4a?text=Linux+Notes" alt="Placeholder image for GNU/Linux notes" data-placeholder>
+            <img src="assets/bash-scripts.jpg" alt="Source code of the emu8086 Bash launcher">
           </div>
           <div class="work-card__meta">
-            <span class="work-card__title">GNU/Linux Notes</span>
-            <span class="work-card__cat">Systems</span>
+            <span class="work-card__title">Bash scripts</span>
+            <span class="work-card__cat">Linux tools</span>
           </div>
         </a>
       </div>
     </div>
   </section>
+
+  </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
